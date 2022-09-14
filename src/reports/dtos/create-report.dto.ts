@@ -30,10 +30,10 @@ export class CreateReportDto {
   mileage: number;
 
   @IsLongitude()
-  @IsString()
-  lng: string;
+  @IsNumber()
+  lng: number;
 
   @IsLatitude()
-  @IsString()
-  lat: string;
+  @IsNumber()
+  lat: number;
 }
