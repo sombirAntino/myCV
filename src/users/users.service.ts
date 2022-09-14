@@ -19,11 +19,16 @@ export class UsersService {
   }
 
   findOne(id: number) {
+    if (!id) return null;
     return this.userRepository.findOneBy({ id });
   }
 
   findAll() {
     return this.userRepository.find();
+  }
+
+  findOneByEmail(email: string) {
+    return this.userRepository.findOneBy({ email });
   }
 
   async update(id: number, attrs: Partial<User>) {
